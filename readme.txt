@@ -35,6 +35,14 @@ Find premium responsive HTML5 maps at [Fla-shop.com](http://www.fla-shop.com/wor
 
 Alternatively, upload the folder of the plugin to your `/wp-content/plugins/` folder then follow steps 2 and the rest as above.
 
+== Screenshots ==
+
+1. Create one or more maps
+2. Basic settings
+3. Detailed settings for each region. Colors, links, tooltips, etc.
+4. Map Preview page with tooltip
+5. Map Preview page with additional content
+
 == Frequently Asked Questions ==
 
 = How can I insert a map to a page? = 
