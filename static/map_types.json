@@ -1,0 +1,58 @@
+{
+    "1": {
+	    "name": "World",
+	    "mapWidth": 600,
+	    "mapHeight": 300,
+	    "maxWidth": 780,
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/world/map.js",
+        "defaultSettings": "world/settings_tpl.json"
+	},
+    "2": {
+	    "name": "USA (regions)",
+	    "mapWidth": 500,
+	    "mapHeight": 380,
+	    "maxWidth": 700,
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/usa/map.js",
+        "defaultSettings": "usa/settings_tpl.json"
+	},
+    "3": {
+	    "name": "France",
+	    "mapWidth": 500,
+	    "mapHeight": 470,
+	    "maxWidth": 700,
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/france/map.js",
+        "defaultSettings": "france/settings_tpl.json"
+	},
+    "4": {
+	    "name": "Germany",
+	    "mapWidth": 380,
+	    "mapHeight": 500,
+	    "maxWidth": 500,
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/germany/map.js",
+        "defaultSettings": "germany/settings_tpl.json"
+	},
+    "5": {
+	    "name": "Italy",
+	    "mapWidth": 380,
+	    "mapHeight": 500,
+	    "maxWidth": 500,
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/italy/map.js",
+        "defaultSettings": "italy/settings_tpl.json"
+	},
+    "6": {
+	    "name": "Spain",
+	    "mapWidth": 500,
+	    "mapHeight": 350,
+	    "maxWidth": 700,
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/spain/map.js",
+        "defaultSettings": "spain/settings_tpl.json"
+	},		
+    "7": {
+	    "name": "United Kingdom",
+	    "mapWidth": 380,
+	    "mapHeight": 500,
+	    "maxWidth": 500,
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/ukregions/map.js",
+        "defaultSettings": "ukregions/settings_tpl.json"
+	}
+}
