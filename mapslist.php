@@ -156,7 +156,7 @@ $listtable->prepare_items();
                 <input type="hidden" name="maps" value="" />
                 
                 <fieldset>
-                    <legend>Map Settings</legend>
+                    <legend>Add new map</legend>
                     <span>New map name:</span>
                     <input type="text" name="name" value="New map" />
                     

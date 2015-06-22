@@ -54,5 +54,13 @@
 	    "maxWidth": 500,
 	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/ukregions/map.js",
         "defaultSettings": "ukregions/settings_tpl.json"
+	},		
+    "8": {
+	    "name": "Australia",
+	    "mapWidth": 500,
+	    "mapHeight": 500,
+	    "maxWidth": 500,
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/australia/map.js",
+        "defaultSettings": "australia/settings_tpl.json"
 	}
 }
