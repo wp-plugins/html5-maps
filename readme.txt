@@ -4,7 +4,7 @@ Donate link: http://www.fla-shop.com/
 Tags: interactive world map, interactive map, united states map, map, maps, interactive maps, html5 map, svg map, clickable map, united states, us map, responsive map
 Requires at least: 3.3
 Tested up to: 4.2.2
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 
 Nice looking interactive responsive and mobile-friendly HTML5 Map for WordPress with an option to customize the view and the behavior of the map.
@@ -58,6 +58,9 @@ Set the region's click option to "Show more info" in the Detailed Settings secti
 Any type WordPress can deal with.
 
 == Changelog ==
+= 1.2 =
+* Added Benelux countries - the Netherlands, Belgium, Luxembourg.
+
 = 1.1 =
 * Added map of Australia.
 
