@@ -193,7 +193,7 @@ $listtable->prepare_items();
         </div>
         
         <div class="banner">
-            &nbsp;
+            <a href="http://www.fla-shop.com/wordpressmaps.php?utm_source=html5-maps-plugin&utm_medium=dashboard&utm_campaign=banner" target="_blank"><img src="http://cdn.html5maps.com/html5maps_banner_160x600.png" border="0" width="160" height="600"></a>
         </div>
         
         <div class="clear"></div>
