@@ -3,7 +3,7 @@ Contributors: html5maps
 Donate link: http://www.fla-shop.com/
 Tags: interactive world map, interactive map, united states map, map, maps, interactive maps, html5 map, svg map, clickable map, united states, us map, responsive map
 Requires at least: 3.3
-Tested up to: 4.2.2
+Tested up to: 4.2.3
 Stable tag: 1.2
 License: GPLv2 or later
 
