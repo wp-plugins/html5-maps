@@ -4,7 +4,7 @@
 	    "mapWidth": 600,
 	    "mapHeight": 300,
 	    "maxWidth": 780,
-	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/world/map.js",
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.12/world/map.js",
         "defaultSettings": "world/settings_tpl.json"
 	},
     "2": {
@@ -12,7 +12,7 @@
 	    "mapWidth": 500,
 	    "mapHeight": 380,
 	    "maxWidth": 700,
-	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/usa/map.js",
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.12/usa/map.js",
         "defaultSettings": "usa/settings_tpl.json"
 	},
     "3": {
@@ -20,7 +20,7 @@
 	    "mapWidth": 500,
 	    "mapHeight": 500,
 	    "maxWidth": 500,
-	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/australia/map.js",
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.12/australia/map.js",
         "defaultSettings": "australia/settings_tpl.json"
 	},
     "4": {
@@ -28,7 +28,7 @@
 	    "mapWidth": 500,
 	    "mapHeight": 400,
 	    "maxWidth": 700,
-	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/belgium/map.js",
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.12/belgium/map.js",
         "defaultSettings": "belgium/settings_tpl.json"
 	},
     "5": {
@@ -36,7 +36,7 @@
 	    "mapWidth": 500,
 	    "mapHeight": 470,
 	    "maxWidth": 700,
-	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/france/map.js",
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.12/france/map.js",
         "defaultSettings": "france/settings_tpl.json"
 	},
     "6": {
@@ -44,7 +44,7 @@
 	    "mapWidth": 380,
 	    "mapHeight": 500,
 	    "maxWidth": 500,
-	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/germany/map.js",
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.12/germany/map.js",
         "defaultSettings": "germany/settings_tpl.json"
 	},
     "7": {
@@ -52,7 +52,7 @@
 	    "mapWidth": 380,
 	    "mapHeight": 500,
 	    "maxWidth": 500,
-	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/italy/map.js",
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.12/italy/map.js",
         "defaultSettings": "italy/settings_tpl.json"
 	},
     "8": {
@@ -60,7 +60,7 @@
 	    "mapWidth": 500,
 	    "mapHeight": 700,
 	    "maxWidth": 500,
-	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/luxembourg/map.js",
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.12/luxembourg/map.js",
         "defaultSettings": "luxembourg/settings_tpl.json"
 	},		
     "9": {
@@ -68,7 +68,7 @@
 	    "mapWidth": 350,
 	    "mapHeight": 350,
 	    "maxWidth": 600,
-	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/netherlands/map.js",
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.12/netherlands/map.js",
         "defaultSettings": "netherlands/settings_tpl.json"
 	},		
     "10": {
@@ -76,7 +76,7 @@
 	    "mapWidth": 500,
 	    "mapHeight": 350,
 	    "maxWidth": 700,
-	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/spain/map.js",
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.12/spain/map.js",
         "defaultSettings": "spain/settings_tpl.json"
 	},
     "11": {
@@ -84,7 +84,7 @@
 	    "mapWidth": 380,
 	    "mapHeight": 500,
 	    "maxWidth": 500,
-	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.8/ukregions/map.js",
+	    "defaultDataFile": "http://cdn.html5maps.com/libs/locator/2.2.12/ukregions/map.js",
         "defaultSettings": "ukregions/settings_tpl.json"
 	}
 }
