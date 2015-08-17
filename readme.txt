@@ -4,7 +4,7 @@ Donate link: http://www.fla-shop.com/
 Tags: interactive world map, interactive map, united states map, map, maps, interactive maps, html5 map, svg map, clickable map, united states, us map, responsive map
 Requires at least: 3.3
 Tested up to: 4.3
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 
 Nice looking interactive responsive and mobile-friendly HTML5 Map for WordPress with an option to customize the view and the behavior of the map.
@@ -58,6 +58,9 @@ Set the region's click option to "Show more info" in the Detailed Settings secti
 Any type WordPress can deal with.
 
 == Changelog ==
+= 1.4 =
+* Added new countries - Albania, Andorra, Armenia, Austria, Azerbaijan, Bulgaria, Croatia. Now drop-down list of countries has a search bar to quickly find desired map.
+
 = 1.3 =
 * It is now possible to use shortcodes to display content from third-party plugins. Thanks to the plugin settings you can choose where the content will be displayed. You can choose right side of the map or place content below the map.
 

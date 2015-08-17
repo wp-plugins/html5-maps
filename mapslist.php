@@ -166,18 +166,41 @@ $listtable->prepare_items();
                         
                     ?>
                     
-                    <select name="map_type">
+                    <select name="map_type" class="chosen-select">
                         <option value="">Please select the map</option>
-                        <?php foreach($types as $id => $type) { ?>
-                            <option value="<?php echo $id; ?>"><?php echo $type->name; ?></option>
+                        
+                        <?php
+                        
+                            $last_group = ''; $n=0;
+                            foreach($types as $id => $type) {
+                                
+                                $n++;
+                                
+                                if ($type->group!=$last_group) {
+                                    if ($n>1) { echo '</optgroup>'; }
+                                    echo '<optgroup label="'.$type->group.'">';
+                                }
+                            
+                                $last_group = $type->group;
+                                
+                                $type->name_html        = str_replace('+','%20',urlencode($type->name_html));
+                                $type->onselect_content = str_replace('+','%20',urlencode($type->onselect_content));
+                                
+                        ?>
+                            <option value="<?php echo $id; ?>" data-name-html="<?php echo $type->name_html; ?>" data-onselect-content="<?php echo $type->onselect_content; ?>" data-license="<?php echo $type->license; ?>"><?php echo $type->name; ?></option>
+                        
                         <?php } ?>
+                    
                     </select>
                     
                     <input type="submit" class="button button-primary" value="<?php echo __( 'Add new map', 'free-html5-map' ); ?>" />
+                    
+                    <div class="onselect_content"></div>
+                
                 </fieldset>
                 
                 <fieldset>
-                    <legend>Export/import</legend>   
+                    <legend>Export/import Map Settings</legend>   
                     <p><?php echo __( 'To export please select a checkbox of one or more maps, and press Export button', 'free-html5-map' ); ?></p>
                     <input type="button" class="button button-secondary export" value="<?php echo __( 'Export', 'free-html5-map' ); ?>" />
                     <input type="button" class="button button-secondary import" value="<?php echo __( 'Import', 'free-html5-map' ); ?>" disabled />
@@ -202,9 +225,9 @@ $listtable->prepare_items();
     
     
     <script type="text/javascript">
-        jQuery(document).ready(function() {
+        jQuery(document).ready(function($) {
             
-            jQuery('a.delete').click(function() {
+            $('a.delete').click(function() {
                 if (confirm('<?php echo __( 'Remove the map?\nAttention! All settings for the map will be deleted permanently!', 'free-html5-map' ); ?>')) {
                     return true;
                 } else {
@@ -212,28 +235,47 @@ $listtable->prepare_items();
                 }
             });
             
-            jQuery('.maps_toggle').click(function() {
-                jQuery('.map_checkbox,.maps_toggle').not(jQuery(this)).each(function() {
-                    jQuery(this).prop('checked', !(jQuery(this).is(':checked')));
+            $('.maps_toggle').click(function() {
+                $('.map_checkbox,.maps_toggle').not($(this)).each(function() {
+                    $(this).prop('checked', !($(this).is(':checked')));
                 });
             });
             
-            jQuery('input.export').click(function() {
-                jQuery('input[name=action]').val('free_map_export');
+            $('input.export').click(function() {
+                $('input[name=action]').val('free_map_export');
                 
                 var maps = '';
-                jQuery('.map_checkbox:checked').each(function() {
+                $('.map_checkbox:checked').each(function() {
                     if (maps!='') maps+=',';
-                    maps+=jQuery(this).val();
+                    maps+=$(this).val();
                 });
                 
-                jQuery('input[name=maps]').val(maps);
+                $('input[name=maps]').val(maps);
                 
-                jQuery('form[name=action_form]').submit();
+                $('form[name=action_form]').submit();
                 return false; 
             });
             
 
+            $('.chosen-select').chosen().change(function(e) {
+                
+                var content = decodeURIComponent($(this).find('option:selected').attr('data-onselect-content'));
+                var license = $(this).find('option:selected').attr('data-license');
+                license     = license ? license : "free";
+                
+                console.log(license);
+                
+                if (license=="premium") {
+                    $('.button-primary').attr("disabled",true);
+                } else {
+                    $('.button-primary').attr("disabled",false);
+                }
+                
+                $('.onselect_content').html(content);                
+                
+            });
+            
+            
         });
     </script>
     
