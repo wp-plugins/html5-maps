@@ -270,8 +270,10 @@ function free_map_plugin_wp_request( $wp ) {
     if(isset($_GET['freemap_get_state_info'])) {
         $stateId = (int) $_GET['freemap_get_state_info'];
 
-        //echo nl2br($options['state_info'][$stateId]);
-		echo nl2br(apply_filters('the_content',$options['state_info'][$stateId]));
+        $info = $options['state_info'][$stateId];
+        if (strcmp($info, strip_tags($info)))
+            $info = nl2br($info);
+        echo apply_filters('the_content',$info);
 
         exit;
     }
