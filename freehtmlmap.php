@@ -3,7 +3,7 @@
 Plugin Name: HTML5 Maps
 Plugin URI: http://www.fla-shop.com
 Description: High-quality map plugin for WordPress. The map depicts regions (states, provinces, counties etc.) and features color, landing page and popup customization.
-Version: 1.4
+Version: 1.5
 Author: Fla-shop.com
 Author URI: http://www.fla-shop.com
 License: GPLv2 or later
@@ -44,7 +44,8 @@ function free_map_plugin_view() {
     free_map_check_map_exists();
     
     $options = get_site_option('freehtml5map_options');
-    $map_id  = (isset($_REQUEST['map_id'])) ? intval($_REQUEST['map_id']) : array_shift(array_keys($options)) ;
+    $option_keys = is_array($options) ? array_keys($options) : array();
+    $map_id  = (isset($_REQUEST['map_id'])) ? intval($_REQUEST['map_id']) : array_shift($option_keys) ;
     
 ?>
 
@@ -63,9 +64,9 @@ function free_map_plugin_view() {
     </script>
 
     <span class="title">Map: </span>
-    <select name="map_id" style="width: 185px;">
+    <select name="map_id" style="width: 285px;">
         <?php foreach($options as $id => $map_data) { ?>
-            <option value="<?php echo $id; ?>" <?php echo ($id==$map_id)?'selected':'';?>><?php echo $map_data['name']; ?></option>
+            <option value="<?php echo $id; ?>" <?php echo ($id==$map_id)?'selected':'';?>><?php echo "$map_data[name] ($map_data[type])"; ?></option>
         <?php } ?>
     </select>
 
@@ -141,12 +142,13 @@ function free_map_plugin_content($atts, $content) {
     $dir               = WP_PLUGIN_URL.'/html5-maps/static/';
     $siteURL           = get_site_url();
     $options           = get_site_option('freehtml5map_options');
+    $option_keys       = is_array($options) ? array_keys($options) : array();
     
     if (isset($atts['id'])) {
         $map_id  = intval($atts['id']);
         $options = $options[$map_id];
     } else {
-        $map_id  = array_shift(array_keys($options));
+        $map_id  = array_shift($option_keys);
         $options = array_shift($options);
     }
     
@@ -158,7 +160,7 @@ function free_map_plugin_content($atts, $content) {
 
     $style             = (!empty($options['maxWidth']) && $isResponsive) ? 'max-width:'.intval($options['maxWidth']).'px' : '';
     
-    $path_js           = ($options['df_type']==1) ? $options['data_file'] : $options['defaultDataFile'];
+    $path_js           = (isset($options['df_type']) ANd $options['df_type']==1) ? $options['data_file'] : $options['defaultDataFile'];
     
     $mapInit = "
         <!-- start Fla-shop.com HTML5 Map -->	
@@ -219,11 +221,20 @@ function free_map_plugin_wp_request( $wp ) {
         $map_id  = intval($_REQUEST['map_id']);
         $options = get_site_option('freehtml5map_options');
         $options = $options[$map_id];
+        $options['map_data'] = htmlspecialchars_decode($options['map_data']);
     }
     
-    $options['map_data'] = htmlspecialchars_decode($options['map_data']);
     
     if( isset($_GET['freemap_js_data']) ) {
+    
+        $data = json_decode($options['map_data'], true);
+        foreach ($data as &$d)
+        {
+            if (isset($d['comment']) AND $d['comment'])
+                $d['comment'] = apply_filters('the_content', $d['comment']);
+        }
+        unset($d);
+        $options['map_data'] = json_encode($data);
 
         header( 'Content-Type: application/javascript' );
        ?>

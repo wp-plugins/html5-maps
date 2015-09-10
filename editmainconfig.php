@@ -3,7 +3,8 @@
 free_map_check_map_exists();
 
 $options = get_site_option('freehtml5map_options');
-$map_id  = (isset($_REQUEST['map_id'])) ? intval($_REQUEST['map_id']) : array_shift(array_keys($options)) ;
+$option_keys = is_array($options) ? array_keys($options) : array();
+$map_id  = (isset($_REQUEST['map_id'])) ? intval($_REQUEST['map_id']) : array_shift($option_keys) ;
 
 if((isset($_POST['act_type']) && $_POST['act_type'] == 'free_map_plugin_main_save') && current_user_can('manage_options')) {
     
@@ -69,9 +70,9 @@ echo "<h2>" . __( 'HTML5 Map Config', 'free-html5-map' ) . "</h2>";
 <form method="POST">
     
     <span class="title">Map: </span>
-    <select name="map_id" style="width: 185px;">
+    <select name="map_id" style="width: 285px;">
         <?php foreach($options as $id => $map_data) { ?>
-            <option value="<?php echo $id; ?>" <?php echo ($id==$map_id)?'selected':'';?>><?php echo $map_data['name']; ?></option>
+            <option value="<?php echo $id; ?>" <?php echo ($id==$map_id)?'selected':'';?>><?php echo "$map_data[name] ($map_data[type])"; ?></option>
         <?php } ?>
     </select>
     <span class="tipsy-q" original-title="The map">[?]</span><br />
@@ -82,17 +83,17 @@ echo "<h2>" . __( 'HTML5 Map Config', 'free-html5-map' ) . "</h2>";
         <span class="title" style="float: left; height: 130px; width: 15%;">Path to map data file: </span>
         
         <div class="radio-block">
-            <input type="radio" name="options[df_type]" value="0" <?php echo ($options[$map_id]['df_type']==0) ? 'checked' : ''; ?> />
+            <input type="radio" name="options[df_type]" value="0" <?php echo (!isset($options[$map_id]['df_type']) OR $options[$map_id]['df_type']==0) ? 'checked' : ''; ?> />
             <h4>data file on html5maps.com</h4><span class="tipsy-q" original-title="Path to map data file">[?]</span>
             <div class="clear"></div>
             <input type="text" value="<?php echo $options[$map_id]['defaultDataFile']; ?>" readonly />
         </div>
         
         <div class="radio-block">
-            <input type="radio" name="options[df_type]" value="1" <?php echo ($options[$map_id]['df_type']==1) ? 'checked' : ''; ?> />
+            <input type="radio" name="options[df_type]" value="1" <?php echo (isset($options[$map_id]['df_type']) AND $options[$map_id]['df_type']==1) ? 'checked' : ''; ?> />
             <h4>data file on your server</h4><span class="tipsy-q" original-title="Path to map data file">[?]</span>
             <div class="clear"></div>
-            <input type="text" name="options[data_file]" value="<?php echo $options[$map_id]['data_file']; ?>" />
+            <input type="text" name="options[data_file]" value="<?php echo isset($options[$map_id]['data_file']) ? $options[$map_id]['data_file'] : ''; ?>" />
         </div>
         
     </fieldset>

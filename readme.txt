@@ -4,7 +4,7 @@ Donate link: http://www.fla-shop.com/
 Tags: interactive world map, interactive map, united states map, map, maps, interactive maps, html5 map, svg map, clickable map, united states, us map, responsive map
 Requires at least: 3.3
 Tested up to: 4.3
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPLv2 or later
 
 Nice looking interactive responsive and mobile-friendly HTML5 Map for WordPress with an option to customize the view and the behavior of the map.
@@ -58,6 +58,11 @@ Set the region's click option to "Show more info" in the Detailed Settings secti
 Any type WordPress can deal with.
 
 == Changelog ==
+= 1.5 =
+* Added new maps - Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, District of Columbia, Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming
+* It is now possible to use shortcode from some third-party plugins to display content inside the tooltip
+* Minor bug fixes
+
 = 1.4 =
 * Added new countries - Albania, Andorra, Armenia, Austria, Azerbaijan, Bulgaria, Croatia. Now drop-down list of countries has a search bar to quickly find desired map.
 

@@ -3,7 +3,8 @@
 free_map_check_map_exists();
 
 $options = get_site_option('freehtml5map_options');
-$map_id  = (isset($_REQUEST['map_id'])) ? intval($_REQUEST['map_id']) : array_shift(array_keys($options)) ;
+$option_keys = is_array($options) ? array_keys($options) : array();
+$map_id  = (isset($_REQUEST['map_id'])) ? intval($_REQUEST['map_id']) : array_shift($option_keys) ;
 
 $states  = $options[$map_id]['map_data'];
 $states  = json_decode($states, true);
@@ -208,15 +209,15 @@ echo "<h2>" . __( 'Configuration of Map Areas', 'free-html5-map' ) . "</h2>";
 	    <p class="help">* The term "area" means one of the following: region, state, country, province, county or district, depending on the particular plugin.</p>
 	    
 	    
-	    <select name="map_id">
+	    <select name="map_id" style="width: 285px;">
 		<?php foreach($options as $id => $map_data) { ?>
-		    <option value="<?php echo $id; ?>" <?php echo ($id==$map_id)?'selected':'';?>><?php echo $map_data['name']; ?></option>
+		    <option value="<?php echo $id; ?>" <?php echo ($id==$map_id)?'selected':'';?>><?php echo "$map_data[name] ($map_data[type])"; ?></option>
 		<?php } ?>
 	    </select>
 	    
 	    <br />
 	    
-	    <select name="state_select">
+	    <select name="state_select" style="width: 285px;">
 		<option value=0>Select an area</option>
 	    <?php
     
@@ -295,11 +296,11 @@ echo "<h2>" . __( 'Configuration of Map Areas', 'free-html5-map' ) . "</h2>";
 		    if(1) // just disable if((int)$tariff == 2)
 		    {
 			?>
-			<span class="title">Area color: </span><input <?php if((int)$tariff == 1) { echo ' disabled'; }?> class="color colorSimple" type="text" name="color[<?php echo $vals['id']?>]" value="<?php echo $vals['color_map']?>" style="background-color: #<?php echo $vals['color_map']?>"  />
+			<span class="title">Area color: </span><input class="color colorSimple" type="text" name="color[<?php echo $vals['id']?>]" value="<?php echo $vals['color_map']?>" style="background-color: #<?php echo $vals['color_map']?>"  />
 			<span class="tipsy-q" original-title='The color of an area.'>[?]</span><div class="colorpicker"></div>
 			<label><input name="colorSimpleCh[<?php echo $vals['id']?>]" class="colorSimpleCh" type="checkbox" /> Apply to all areas</label>
 			<br />
-			<span class="title">Area hover color: </span><input <?php if((int)$tariff == 1) { echo ' disabled'; }?> class="color colorOver" type="text" name="color_[<?php echo $vals['id']?>]" value="<?php echo $vals['color_map_over']?>" style="background-color: #<?php echo $vals['color_map_over']?>"  />
+			<span class="title">Area hover color: </span><input class="color colorOver" type="text" name="color_[<?php echo $vals['id']?>]" value="<?php echo $vals['color_map_over']?>" style="background-color: #<?php echo $vals['color_map_over']?>"  />
 			<span class="tipsy-q" original-title='The color of an area when the mouse cursor is over it.'>[?]</span><div class="colorpicker"></div>
 			<label><input name="colorOverCh[<?php echo $vals['id']?>]" class="colorOverCh" type="checkbox" /> Apply to all areas</label>
 			<br />

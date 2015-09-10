@@ -257,23 +257,23 @@ $listtable->prepare_items();
             });
             
 
-            $('.chosen-select').chosen().change(function(e) {
+            var onMapSelect = function(e) {
                 
-                var content = decodeURIComponent($(this).find('option:selected').attr('data-onselect-content'));
+                var content = $(this).find('option:selected').attr('data-onselect-content');
+                content = content ? decodeURIComponent(content) : '';
                 var license = $(this).find('option:selected').attr('data-license');
-                license     = license ? license : "free";
                 
-                console.log(license);
-                
-                if (license=="premium") {
-                    $('.button-primary').attr("disabled",true);
-                } else {
+                if (license=="free") {
                     $('.button-primary').attr("disabled",false);
+                } else {
+                    $('.button-primary').attr("disabled",true);
                 }
                 
                 $('.onselect_content').html(content);                
                 
-            });
+            };
+            $('.chosen-select').chosen().change(onMapSelect);
+            onMapSelect();
             
             
         });
