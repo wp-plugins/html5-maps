@@ -228,11 +228,13 @@ function free_map_plugin_wp_request( $wp ) {
     if( isset($_GET['freemap_js_data']) ) {
     
         $data = json_decode($options['map_data'], true);
+		/*
         foreach ($data as &$d)
         {
             if (isset($d['comment']) AND $d['comment'])
                 $d['comment'] = apply_filters('the_content', $d['comment']);
         }
+		*/
         unset($d);
         $options['map_data'] = json_encode($data);
 
